@@ -1,26 +1,3 @@
-<?php
-
-session_start();
-
-require 'database.php';
-
-if( isset($_SESSION['user_id']) ){
-
-	$records = $conn->prepare('SELECT id,email,password FROM users WHERE id = :id');
-	$records->bindParam(':id', $_SESSION['user_id']);
-	$records->execute();
-	$results = $records->fetch(PDO::FETCH_ASSOC);
-
-	$user = NULL;
-
-	if( count($results) > 0){
-		$user = $results;
-	}
-
-}
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,7 +17,7 @@ body  {
 	<?php if( !empty($user) ): ?>
 
     <?php
-include 'includes/func.php';
+include 'func.php';
 
 $title  = 'FullOnChill'; //Edit Homepage Title
 
@@ -57,7 +34,7 @@ echo '<h2><a>Facebook.com/PakIdiots</a> | <a>Full On Chill</a></h2>';
 <html>
 <head>
 	<title>Login Below</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href='http://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
 	<script data-ad-client="ca-pub-6184791442727848" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
