@@ -13,10 +13,7 @@ body  {
 	<link href='http://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
-	<?php if( !empty($user) ): ?>
-
-    <?php
+<?php
 include 'func.php';
 
 $title  = 'FullOnChill'; //Edit Homepage Title
